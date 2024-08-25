@@ -1,0 +1,2 @@
+#instalar qemu
+sudo apt-get install qemu-system-i386

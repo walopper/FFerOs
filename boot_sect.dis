@@ -1,0 +1,983 @@
+00000000  B40E              mov ah,0xe
+00000002  B046              mov al,0x46
+00000004  CD10              int 0x10
+00000006  B065              mov al,0x65
+00000008  CD10              int 0x10
+0000000A  B072              mov al,0x72
+0000000C  CD10              int 0x10
+0000000E  B04F              mov al,0x4f
+00000010  CD10              int 0x10
+00000012  B053              mov al,0x53
+00000014  CD10              int 0x10
+00000016  B00A              mov al,0xa
+00000018  CD10              int 0x10
+0000001A  B00D              mov al,0xd
+0000001C  CD10              int 0x10
+0000001E  BB2A7DE853        mov ebx,0x53e87d2a
+00000023  00E8              add al,ch
+00000025  6200              bound eax,[eax]
+00000027  BB3D7DE84A        mov ebx,0x4ae87d3d
+0000002C  00E8              add al,ch
+0000002E  59                pop ecx
+0000002F  00BAFE12E860      add [edx+0x60e812fe],bh
+00000035  00E8              add al,ch
+00000037  50                push eax
+00000038  008816597DBB      add [eax-0x4482a6ea],cl
+0000003E  43                inc ebx
+0000003F  7DE8              jnl 0x29
+00000041  3400              xor al,0x0
+00000043  BB597DE84D        mov ebx,0x4de87d59
+00000048  00E8              add al,ch
+0000004A  3D00BD0080        cmp eax,0x8000bd00
+0000004F  89EC              mov esp,ebp
+00000051  BB0090B605        mov ebx,0x5b69000
+00000056  B200              mov dl,0x0
+00000058  E86F008B16        call dword 0x168b00cc
+0000005D  0090E834008B      add [eax-0x74ffcb18],dl
+00000063  16                push ss
+00000064  0092E82D00E8      add [edx-0x17ffd218],dl
+0000006A  1D00BB3D7D        sbb eax,0x7d3dbb00
+0000006F  E80500E814        call dword 0x14e80079
+00000074  00EB              add bl,ch
+00000076  FE                db 0xfe
+00000077  60                pushad
+00000078  8A07              mov al,[edi]
+0000007A  3C00              cmp al,0x0
+0000007C  7409              jz 0x87
+0000007E  B40E              mov ah,0xe
+00000080  CD10              int 0x10
+00000082  83C301            add ebx,byte +0x1
+00000085  EBF1              jmp short 0x78
+00000087  61                popad
+00000088  C3                ret
+00000089  60                pushad
+0000008A  B40E              mov ah,0xe
+0000008C  B00A              mov al,0xa
+0000008E  CD10              int 0x10
+00000090  B00D              mov al,0xd
+00000092  CD10              int 0x10
+00000094  61                popad
+00000095  C3                ret
+00000096  60                pushad
+00000097  B9000083F9        mov ecx,0xf9830000
+0000009C  0474              add al,0x74
+0000009E  1C89              sbb al,0x89
+000000A0  D083E00F0430      rol byte [ebx+0x30040fe0],1
+000000A6  3C39              cmp al,0x39
+000000A8  7E02              jng 0xac
+000000AA  0407              add al,0x7
+000000AC  BBC87C29CB        mov ebx,0xcb297cc8
+000000B1  8807              mov [edi],al
+000000B3  C1CA04            ror edx,byte 0x4
+000000B6  83C101            add ecx,byte +0x1
+000000B9  EBDF              jmp short 0x9a
+000000BB  BBC37CE8B6        mov ebx,0xb6e87cc3
+000000C0  FF61C3            jmp dword [ecx-0x3d]
+000000C3  307830            xor [eax+0x30],bh
+000000C6  3030              xor [eax],dh
+000000C8  3000              xor [eax],al
+000000CA  60                pushad
+000000CB  52                push edx
+000000CC  B402              mov ah,0x2
+000000CE  88F0              mov al,dh
+000000D0  B102              mov cl,0x2
+000000D2  B500              mov ch,0x0
+000000D4  B600              mov dh,0x0
+000000D6  CD13              int 0x13
+000000D8  7207              jc 0xe1
+000000DA  5A                pop edx
+000000DB  38F0              cmp al,dh
+000000DD  7512              jnz 0xf1
+000000DF  61                popad
+000000E0  C3                ret
+000000E1  BBF97CE890        mov ebx,0x90e87cf9
+000000E6  FF                db 0xff
+000000E7  E89FFF88E6        call dword 0xe689008b
+000000EC  E8A7FFEB06        call dword 0x6ec0098
+000000F1  BB097DE880        mov ebx,0x80e87d09
+000000F6  FF                db 0xff
+000000F7  EBFE              jmp short 0xf7
+000000F9  44                inc esp
+000000FA  69736B20726561    imul esi,[ebx+0x6b],dword 0x61657220
+00000101  64206572          and [fs:ebp+0x72],ah
+00000105  726F              jc 0x176
+00000107  7200              jc 0x109
+00000109  49                dec ecx
+0000010A  6E                outsb
+0000010B  636F72            arpl [edi+0x72],bp
+0000010E  7265              jc 0x175
+00000110  6374206E          arpl [eax+0x6e],si
+00000114  756D              jnz 0x183
+00000116  626572            bound esp,[ebp+0x72]
+00000119  206F66            and [edi+0x66],ch
+0000011C  207365            and [ebx+0x65],dh
+0000011F  63746F72          arpl [edi+ebp*2+0x72],si
+00000123  7320              jnc 0x145
+00000125  7265              jc 0x18c
+00000127  61                popad
+00000128  6400496E          add [fs:ecx+0x6e],cl
+0000012C  696369616E646F    imul esp,[ebx+0x69],dword 0x6f646e61
+00000133  204F53            and [edi+0x53],cl
+00000136  2E2E2E2021        and [cs:ecx],ah
+0000013B  2000              and [eax],al
+0000013D  46                inc esi
+0000013E  696E2E2000426F    imul ebp,[esi+0x2e],dword 0x6f420020
+00000145  6F                outsd
+00000146  7420              jz 0x168
+00000148  44                inc esp
+00000149  7269              jc 0x1b4
+0000014B  7665              jna 0x1b2
+0000014D  204F72            and [edi+0x72],cl
+00000150  6967696E616C3A    imul esp,[edi+0x69],dword 0x3a6c616e
+00000157  2000              and [eax],al
+00000159  0000              add [eax],al
+0000015B  0000              add [eax],al
+0000015D  0000              add [eax],al
+0000015F  0000              add [eax],al
+00000161  0000              add [eax],al
+00000163  0000              add [eax],al
+00000165  0000              add [eax],al
+00000167  0000              add [eax],al
+00000169  0000              add [eax],al
+0000016B  0000              add [eax],al
+0000016D  0000              add [eax],al
+0000016F  0000              add [eax],al
+00000171  0000              add [eax],al
+00000173  0000              add [eax],al
+00000175  0000              add [eax],al
+00000177  0000              add [eax],al
+00000179  0000              add [eax],al
+0000017B  0000              add [eax],al
+0000017D  0000              add [eax],al
+0000017F  0000              add [eax],al
+00000181  0000              add [eax],al
+00000183  0000              add [eax],al
+00000185  0000              add [eax],al
+00000187  0000              add [eax],al
+00000189  0000              add [eax],al
+0000018B  0000              add [eax],al
+0000018D  0000              add [eax],al
+0000018F  0000              add [eax],al
+00000191  0000              add [eax],al
+00000193  0000              add [eax],al
+00000195  0000              add [eax],al
+00000197  0000              add [eax],al
+00000199  0000              add [eax],al
+0000019B  0000              add [eax],al
+0000019D  0000              add [eax],al
+0000019F  0000              add [eax],al
+000001A1  0000              add [eax],al
+000001A3  0000              add [eax],al
+000001A5  0000              add [eax],al
+000001A7  0000              add [eax],al
+000001A9  0000              add [eax],al
+000001AB  0000              add [eax],al
+000001AD  0000              add [eax],al
+000001AF  0000              add [eax],al
+000001B1  0000              add [eax],al
+000001B3  0000              add [eax],al
+000001B5  0000              add [eax],al
+000001B7  0000              add [eax],al
+000001B9  0000              add [eax],al
+000001BB  0000              add [eax],al
+000001BD  0000              add [eax],al
+000001BF  0000              add [eax],al
+000001C1  0000              add [eax],al
+000001C3  0000              add [eax],al
+000001C5  0000              add [eax],al
+000001C7  0000              add [eax],al
+000001C9  0000              add [eax],al
+000001CB  0000              add [eax],al
+000001CD  0000              add [eax],al
+000001CF  0000              add [eax],al
+000001D1  0000              add [eax],al
+000001D3  0000              add [eax],al
+000001D5  0000              add [eax],al
+000001D7  0000              add [eax],al
+000001D9  0000              add [eax],al
+000001DB  0000              add [eax],al
+000001DD  0000              add [eax],al
+000001DF  0000              add [eax],al
+000001E1  0000              add [eax],al
+000001E3  0000              add [eax],al
+000001E5  0000              add [eax],al
+000001E7  0000              add [eax],al
+000001E9  0000              add [eax],al
+000001EB  0000              add [eax],al
+000001ED  0000              add [eax],al
+000001EF  0000              add [eax],al
+000001F1  0000              add [eax],al
+000001F3  0000              add [eax],al
+000001F5  0000              add [eax],al
+000001F7  0000              add [eax],al
+000001F9  0000              add [eax],al
+000001FB  0000              add [eax],al
+000001FD  0055AA            add [ebp-0x56],dl
+00000200  DADA              fcmovu st2
+00000202  DADA              fcmovu st2
+00000204  DADA              fcmovu st2
+00000206  DADA              fcmovu st2
+00000208  DADA              fcmovu st2
+0000020A  DADA              fcmovu st2
+0000020C  DADA              fcmovu st2
+0000020E  DADA              fcmovu st2
+00000210  DADA              fcmovu st2
+00000212  DADA              fcmovu st2
+00000214  DADA              fcmovu st2
+00000216  DADA              fcmovu st2
+00000218  DADA              fcmovu st2
+0000021A  DADA              fcmovu st2
+0000021C  DADA              fcmovu st2
+0000021E  DADA              fcmovu st2
+00000220  DADA              fcmovu st2
+00000222  DADA              fcmovu st2
+00000224  DADA              fcmovu st2
+00000226  DADA              fcmovu st2
+00000228  DADA              fcmovu st2
+0000022A  DADA              fcmovu st2
+0000022C  DADA              fcmovu st2
+0000022E  DADA              fcmovu st2
+00000230  DADA              fcmovu st2
+00000232  DADA              fcmovu st2
+00000234  DADA              fcmovu st2
+00000236  DADA              fcmovu st2
+00000238  DADA              fcmovu st2
+0000023A  DADA              fcmovu st2
+0000023C  DADA              fcmovu st2
+0000023E  DADA              fcmovu st2
+00000240  DADA              fcmovu st2
+00000242  DADA              fcmovu st2
+00000244  DADA              fcmovu st2
+00000246  DADA              fcmovu st2
+00000248  DADA              fcmovu st2
+0000024A  DADA              fcmovu st2
+0000024C  DADA              fcmovu st2
+0000024E  DADA              fcmovu st2
+00000250  DADA              fcmovu st2
+00000252  DADA              fcmovu st2
+00000254  DADA              fcmovu st2
+00000256  DADA              fcmovu st2
+00000258  DADA              fcmovu st2
+0000025A  DADA              fcmovu st2
+0000025C  DADA              fcmovu st2
+0000025E  DADA              fcmovu st2
+00000260  DADA              fcmovu st2
+00000262  DADA              fcmovu st2
+00000264  DADA              fcmovu st2
+00000266  DADA              fcmovu st2
+00000268  DADA              fcmovu st2
+0000026A  DADA              fcmovu st2
+0000026C  DADA              fcmovu st2
+0000026E  DADA              fcmovu st2
+00000270  DADA              fcmovu st2
+00000272  DADA              fcmovu st2
+00000274  DADA              fcmovu st2
+00000276  DADA              fcmovu st2
+00000278  DADA              fcmovu st2
+0000027A  DADA              fcmovu st2
+0000027C  DADA              fcmovu st2
+0000027E  DADA              fcmovu st2
+00000280  DADA              fcmovu st2
+00000282  DADA              fcmovu st2
+00000284  DADA              fcmovu st2
+00000286  DADA              fcmovu st2
+00000288  DADA              fcmovu st2
+0000028A  DADA              fcmovu st2
+0000028C  DADA              fcmovu st2
+0000028E  DADA              fcmovu st2
+00000290  DADA              fcmovu st2
+00000292  DADA              fcmovu st2
+00000294  DADA              fcmovu st2
+00000296  DADA              fcmovu st2
+00000298  DADA              fcmovu st2
+0000029A  DADA              fcmovu st2
+0000029C  DADA              fcmovu st2
+0000029E  DADA              fcmovu st2
+000002A0  DADA              fcmovu st2
+000002A2  DADA              fcmovu st2
+000002A4  DADA              fcmovu st2
+000002A6  DADA              fcmovu st2
+000002A8  DADA              fcmovu st2
+000002AA  DADA              fcmovu st2
+000002AC  DADA              fcmovu st2
+000002AE  DADA              fcmovu st2
+000002B0  DADA              fcmovu st2
+000002B2  DADA              fcmovu st2
+000002B4  DADA              fcmovu st2
+000002B6  DADA              fcmovu st2
+000002B8  DADA              fcmovu st2
+000002BA  DADA              fcmovu st2
+000002BC  DADA              fcmovu st2
+000002BE  DADA              fcmovu st2
+000002C0  DADA              fcmovu st2
+000002C2  DADA              fcmovu st2
+000002C4  DADA              fcmovu st2
+000002C6  DADA              fcmovu st2
+000002C8  DADA              fcmovu st2
+000002CA  DADA              fcmovu st2
+000002CC  DADA              fcmovu st2
+000002CE  DADA              fcmovu st2
+000002D0  DADA              fcmovu st2
+000002D2  DADA              fcmovu st2
+000002D4  DADA              fcmovu st2
+000002D6  DADA              fcmovu st2
+000002D8  DADA              fcmovu st2
+000002DA  DADA              fcmovu st2
+000002DC  DADA              fcmovu st2
+000002DE  DADA              fcmovu st2
+000002E0  DADA              fcmovu st2
+000002E2  DADA              fcmovu st2
+000002E4  DADA              fcmovu st2
+000002E6  DADA              fcmovu st2
+000002E8  DADA              fcmovu st2
+000002EA  DADA              fcmovu st2
+000002EC  DADA              fcmovu st2
+000002EE  DADA              fcmovu st2
+000002F0  DADA              fcmovu st2
+000002F2  DADA              fcmovu st2
+000002F4  DADA              fcmovu st2
+000002F6  DADA              fcmovu st2
+000002F8  DADA              fcmovu st2
+000002FA  DADA              fcmovu st2
+000002FC  DADA              fcmovu st2
+000002FE  DADA              fcmovu st2
+00000300  DADA              fcmovu st2
+00000302  DADA              fcmovu st2
+00000304  DADA              fcmovu st2
+00000306  DADA              fcmovu st2
+00000308  DADA              fcmovu st2
+0000030A  DADA              fcmovu st2
+0000030C  DADA              fcmovu st2
+0000030E  DADA              fcmovu st2
+00000310  DADA              fcmovu st2
+00000312  DADA              fcmovu st2
+00000314  DADA              fcmovu st2
+00000316  DADA              fcmovu st2
+00000318  DADA              fcmovu st2
+0000031A  DADA              fcmovu st2
+0000031C  DADA              fcmovu st2
+0000031E  DADA              fcmovu st2
+00000320  DADA              fcmovu st2
+00000322  DADA              fcmovu st2
+00000324  DADA              fcmovu st2
+00000326  DADA              fcmovu st2
+00000328  DADA              fcmovu st2
+0000032A  DADA              fcmovu st2
+0000032C  DADA              fcmovu st2
+0000032E  DADA              fcmovu st2
+00000330  DADA              fcmovu st2
+00000332  DADA              fcmovu st2
+00000334  DADA              fcmovu st2
+00000336  DADA              fcmovu st2
+00000338  DADA              fcmovu st2
+0000033A  DADA              fcmovu st2
+0000033C  DADA              fcmovu st2
+0000033E  DADA              fcmovu st2
+00000340  DADA              fcmovu st2
+00000342  DADA              fcmovu st2
+00000344  DADA              fcmovu st2
+00000346  DADA              fcmovu st2
+00000348  DADA              fcmovu st2
+0000034A  DADA              fcmovu st2
+0000034C  DADA              fcmovu st2
+0000034E  DADA              fcmovu st2
+00000350  DADA              fcmovu st2
+00000352  DADA              fcmovu st2
+00000354  DADA              fcmovu st2
+00000356  DADA              fcmovu st2
+00000358  DADA              fcmovu st2
+0000035A  DADA              fcmovu st2
+0000035C  DADA              fcmovu st2
+0000035E  DADA              fcmovu st2
+00000360  DADA              fcmovu st2
+00000362  DADA              fcmovu st2
+00000364  DADA              fcmovu st2
+00000366  DADA              fcmovu st2
+00000368  DADA              fcmovu st2
+0000036A  DADA              fcmovu st2
+0000036C  DADA              fcmovu st2
+0000036E  DADA              fcmovu st2
+00000370  DADA              fcmovu st2
+00000372  DADA              fcmovu st2
+00000374  DADA              fcmovu st2
+00000376  DADA              fcmovu st2
+00000378  DADA              fcmovu st2
+0000037A  DADA              fcmovu st2
+0000037C  DADA              fcmovu st2
+0000037E  DADA              fcmovu st2
+00000380  DADA              fcmovu st2
+00000382  DADA              fcmovu st2
+00000384  DADA              fcmovu st2
+00000386  DADA              fcmovu st2
+00000388  DADA              fcmovu st2
+0000038A  DADA              fcmovu st2
+0000038C  DADA              fcmovu st2
+0000038E  DADA              fcmovu st2
+00000390  DADA              fcmovu st2
+00000392  DADA              fcmovu st2
+00000394  DADA              fcmovu st2
+00000396  DADA              fcmovu st2
+00000398  DADA              fcmovu st2
+0000039A  DADA              fcmovu st2
+0000039C  DADA              fcmovu st2
+0000039E  DADA              fcmovu st2
+000003A0  DADA              fcmovu st2
+000003A2  DADA              fcmovu st2
+000003A4  DADA              fcmovu st2
+000003A6  DADA              fcmovu st2
+000003A8  DADA              fcmovu st2
+000003AA  DADA              fcmovu st2
+000003AC  DADA              fcmovu st2
+000003AE  DADA              fcmovu st2
+000003B0  DADA              fcmovu st2
+000003B2  DADA              fcmovu st2
+000003B4  DADA              fcmovu st2
+000003B6  DADA              fcmovu st2
+000003B8  DADA              fcmovu st2
+000003BA  DADA              fcmovu st2
+000003BC  DADA              fcmovu st2
+000003BE  DADA              fcmovu st2
+000003C0  DADA              fcmovu st2
+000003C2  DADA              fcmovu st2
+000003C4  DADA              fcmovu st2
+000003C6  DADA              fcmovu st2
+000003C8  DADA              fcmovu st2
+000003CA  DADA              fcmovu st2
+000003CC  DADA              fcmovu st2
+000003CE  DADA              fcmovu st2
+000003D0  DADA              fcmovu st2
+000003D2  DADA              fcmovu st2
+000003D4  DADA              fcmovu st2
+000003D6  DADA              fcmovu st2
+000003D8  DADA              fcmovu st2
+000003DA  DADA              fcmovu st2
+000003DC  DADA              fcmovu st2
+000003DE  DADA              fcmovu st2
+000003E0  DADA              fcmovu st2
+000003E2  DADA              fcmovu st2
+000003E4  DADA              fcmovu st2
+000003E6  DADA              fcmovu st2
+000003E8  DADA              fcmovu st2
+000003EA  DADA              fcmovu st2
+000003EC  DADA              fcmovu st2
+000003EE  DADA              fcmovu st2
+000003F0  DADA              fcmovu st2
+000003F2  DADA              fcmovu st2
+000003F4  DADA              fcmovu st2
+000003F6  DADA              fcmovu st2
+000003F8  DADA              fcmovu st2
+000003FA  DADA              fcmovu st2
+000003FC  DADA              fcmovu st2
+000003FE  DADA              fcmovu st2
+00000400  CE                into
+00000401  FA                cli
+00000402  CE                into
+00000403  FA                cli
+00000404  CE                into
+00000405  FA                cli
+00000406  CE                into
+00000407  FA                cli
+00000408  CE                into
+00000409  FA                cli
+0000040A  CE                into
+0000040B  FA                cli
+0000040C  CE                into
+0000040D  FA                cli
+0000040E  CE                into
+0000040F  FA                cli
+00000410  CE                into
+00000411  FA                cli
+00000412  CE                into
+00000413  FA                cli
+00000414  CE                into
+00000415  FA                cli
+00000416  CE                into
+00000417  FA                cli
+00000418  CE                into
+00000419  FA                cli
+0000041A  CE                into
+0000041B  FA                cli
+0000041C  CE                into
+0000041D  FA                cli
+0000041E  CE                into
+0000041F  FA                cli
+00000420  CE                into
+00000421  FA                cli
+00000422  CE                into
+00000423  FA                cli
+00000424  CE                into
+00000425  FA                cli
+00000426  CE                into
+00000427  FA                cli
+00000428  CE                into
+00000429  FA                cli
+0000042A  CE                into
+0000042B  FA                cli
+0000042C  CE                into
+0000042D  FA                cli
+0000042E  CE                into
+0000042F  FA                cli
+00000430  CE                into
+00000431  FA                cli
+00000432  CE                into
+00000433  FA                cli
+00000434  CE                into
+00000435  FA                cli
+00000436  CE                into
+00000437  FA                cli
+00000438  CE                into
+00000439  FA                cli
+0000043A  CE                into
+0000043B  FA                cli
+0000043C  CE                into
+0000043D  FA                cli
+0000043E  CE                into
+0000043F  FA                cli
+00000440  CE                into
+00000441  FA                cli
+00000442  CE                into
+00000443  FA                cli
+00000444  CE                into
+00000445  FA                cli
+00000446  CE                into
+00000447  FA                cli
+00000448  CE                into
+00000449  FA                cli
+0000044A  CE                into
+0000044B  FA                cli
+0000044C  CE                into
+0000044D  FA                cli
+0000044E  CE                into
+0000044F  FA                cli
+00000450  CE                into
+00000451  FA                cli
+00000452  CE                into
+00000453  FA                cli
+00000454  CE                into
+00000455  FA                cli
+00000456  CE                into
+00000457  FA                cli
+00000458  CE                into
+00000459  FA                cli
+0000045A  CE                into
+0000045B  FA                cli
+0000045C  CE                into
+0000045D  FA                cli
+0000045E  CE                into
+0000045F  FA                cli
+00000460  CE                into
+00000461  FA                cli
+00000462  CE                into
+00000463  FA                cli
+00000464  CE                into
+00000465  FA                cli
+00000466  CE                into
+00000467  FA                cli
+00000468  CE                into
+00000469  FA                cli
+0000046A  CE                into
+0000046B  FA                cli
+0000046C  CE                into
+0000046D  FA                cli
+0000046E  CE                into
+0000046F  FA                cli
+00000470  CE                into
+00000471  FA                cli
+00000472  CE                into
+00000473  FA                cli
+00000474  CE                into
+00000475  FA                cli
+00000476  CE                into
+00000477  FA                cli
+00000478  CE                into
+00000479  FA                cli
+0000047A  CE                into
+0000047B  FA                cli
+0000047C  CE                into
+0000047D  FA                cli
+0000047E  CE                into
+0000047F  FA                cli
+00000480  CE                into
+00000481  FA                cli
+00000482  CE                into
+00000483  FA                cli
+00000484  CE                into
+00000485  FA                cli
+00000486  CE                into
+00000487  FA                cli
+00000488  CE                into
+00000489  FA                cli
+0000048A  CE                into
+0000048B  FA                cli
+0000048C  CE                into
+0000048D  FA                cli
+0000048E  CE                into
+0000048F  FA                cli
+00000490  CE                into
+00000491  FA                cli
+00000492  CE                into
+00000493  FA                cli
+00000494  CE                into
+00000495  FA                cli
+00000496  CE                into
+00000497  FA                cli
+00000498  CE                into
+00000499  FA                cli
+0000049A  CE                into
+0000049B  FA                cli
+0000049C  CE                into
+0000049D  FA                cli
+0000049E  CE                into
+0000049F  FA                cli
+000004A0  CE                into
+000004A1  FA                cli
+000004A2  CE                into
+000004A3  FA                cli
+000004A4  CE                into
+000004A5  FA                cli
+000004A6  CE                into
+000004A7  FA                cli
+000004A8  CE                into
+000004A9  FA                cli
+000004AA  CE                into
+000004AB  FA                cli
+000004AC  CE                into
+000004AD  FA                cli
+000004AE  CE                into
+000004AF  FA                cli
+000004B0  CE                into
+000004B1  FA                cli
+000004B2  CE                into
+000004B3  FA                cli
+000004B4  CE                into
+000004B5  FA                cli
+000004B6  CE                into
+000004B7  FA                cli
+000004B8  CE                into
+000004B9  FA                cli
+000004BA  CE                into
+000004BB  FA                cli
+000004BC  CE                into
+000004BD  FA                cli
+000004BE  CE                into
+000004BF  FA                cli
+000004C0  CE                into
+000004C1  FA                cli
+000004C2  CE                into
+000004C3  FA                cli
+000004C4  CE                into
+000004C5  FA                cli
+000004C6  CE                into
+000004C7  FA                cli
+000004C8  CE                into
+000004C9  FA                cli
+000004CA  CE                into
+000004CB  FA                cli
+000004CC  CE                into
+000004CD  FA                cli
+000004CE  CE                into
+000004CF  FA                cli
+000004D0  CE                into
+000004D1  FA                cli
+000004D2  CE                into
+000004D3  FA                cli
+000004D4  CE                into
+000004D5  FA                cli
+000004D6  CE                into
+000004D7  FA                cli
+000004D8  CE                into
+000004D9  FA                cli
+000004DA  CE                into
+000004DB  FA                cli
+000004DC  CE                into
+000004DD  FA                cli
+000004DE  CE                into
+000004DF  FA                cli
+000004E0  CE                into
+000004E1  FA                cli
+000004E2  CE                into
+000004E3  FA                cli
+000004E4  CE                into
+000004E5  FA                cli
+000004E6  CE                into
+000004E7  FA                cli
+000004E8  CE                into
+000004E9  FA                cli
+000004EA  CE                into
+000004EB  FA                cli
+000004EC  CE                into
+000004ED  FA                cli
+000004EE  CE                into
+000004EF  FA                cli
+000004F0  CE                into
+000004F1  FA                cli
+000004F2  CE                into
+000004F3  FA                cli
+000004F4  CE                into
+000004F5  FA                cli
+000004F6  CE                into
+000004F7  FA                cli
+000004F8  CE                into
+000004F9  FA                cli
+000004FA  CE                into
+000004FB  FA                cli
+000004FC  CE                into
+000004FD  FA                cli
+000004FE  CE                into
+000004FF  FA                cli
+00000500  CE                into
+00000501  FA                cli
+00000502  CE                into
+00000503  FA                cli
+00000504  CE                into
+00000505  FA                cli
+00000506  CE                into
+00000507  FA                cli
+00000508  CE                into
+00000509  FA                cli
+0000050A  CE                into
+0000050B  FA                cli
+0000050C  CE                into
+0000050D  FA                cli
+0000050E  CE                into
+0000050F  FA                cli
+00000510  CE                into
+00000511  FA                cli
+00000512  CE                into
+00000513  FA                cli
+00000514  CE                into
+00000515  FA                cli
+00000516  CE                into
+00000517  FA                cli
+00000518  CE                into
+00000519  FA                cli
+0000051A  CE                into
+0000051B  FA                cli
+0000051C  CE                into
+0000051D  FA                cli
+0000051E  CE                into
+0000051F  FA                cli
+00000520  CE                into
+00000521  FA                cli
+00000522  CE                into
+00000523  FA                cli
+00000524  CE                into
+00000525  FA                cli
+00000526  CE                into
+00000527  FA                cli
+00000528  CE                into
+00000529  FA                cli
+0000052A  CE                into
+0000052B  FA                cli
+0000052C  CE                into
+0000052D  FA                cli
+0000052E  CE                into
+0000052F  FA                cli
+00000530  CE                into
+00000531  FA                cli
+00000532  CE                into
+00000533  FA                cli
+00000534  CE                into
+00000535  FA                cli
+00000536  CE                into
+00000537  FA                cli
+00000538  CE                into
+00000539  FA                cli
+0000053A  CE                into
+0000053B  FA                cli
+0000053C  CE                into
+0000053D  FA                cli
+0000053E  CE                into
+0000053F  FA                cli
+00000540  CE                into
+00000541  FA                cli
+00000542  CE                into
+00000543  FA                cli
+00000544  CE                into
+00000545  FA                cli
+00000546  CE                into
+00000547  FA                cli
+00000548  CE                into
+00000549  FA                cli
+0000054A  CE                into
+0000054B  FA                cli
+0000054C  CE                into
+0000054D  FA                cli
+0000054E  CE                into
+0000054F  FA                cli
+00000550  CE                into
+00000551  FA                cli
+00000552  CE                into
+00000553  FA                cli
+00000554  CE                into
+00000555  FA                cli
+00000556  CE                into
+00000557  FA                cli
+00000558  CE                into
+00000559  FA                cli
+0000055A  CE                into
+0000055B  FA                cli
+0000055C  CE                into
+0000055D  FA                cli
+0000055E  CE                into
+0000055F  FA                cli
+00000560  CE                into
+00000561  FA                cli
+00000562  CE                into
+00000563  FA                cli
+00000564  CE                into
+00000565  FA                cli
+00000566  CE                into
+00000567  FA                cli
+00000568  CE                into
+00000569  FA                cli
+0000056A  CE                into
+0000056B  FA                cli
+0000056C  CE                into
+0000056D  FA                cli
+0000056E  CE                into
+0000056F  FA                cli
+00000570  CE                into
+00000571  FA                cli
+00000572  CE                into
+00000573  FA                cli
+00000574  CE                into
+00000575  FA                cli
+00000576  CE                into
+00000577  FA                cli
+00000578  CE                into
+00000579  FA                cli
+0000057A  CE                into
+0000057B  FA                cli
+0000057C  CE                into
+0000057D  FA                cli
+0000057E  CE                into
+0000057F  FA                cli
+00000580  CE                into
+00000581  FA                cli
+00000582  CE                into
+00000583  FA                cli
+00000584  CE                into
+00000585  FA                cli
+00000586  CE                into
+00000587  FA                cli
+00000588  CE                into
+00000589  FA                cli
+0000058A  CE                into
+0000058B  FA                cli
+0000058C  CE                into
+0000058D  FA                cli
+0000058E  CE                into
+0000058F  FA                cli
+00000590  CE                into
+00000591  FA                cli
+00000592  CE                into
+00000593  FA                cli
+00000594  CE                into
+00000595  FA                cli
+00000596  CE                into
+00000597  FA                cli
+00000598  CE                into
+00000599  FA                cli
+0000059A  CE                into
+0000059B  FA                cli
+0000059C  CE                into
+0000059D  FA                cli
+0000059E  CE                into
+0000059F  FA                cli
+000005A0  CE                into
+000005A1  FA                cli
+000005A2  CE                into
+000005A3  FA                cli
+000005A4  CE                into
+000005A5  FA                cli
+000005A6  CE                into
+000005A7  FA                cli
+000005A8  CE                into
+000005A9  FA                cli
+000005AA  CE                into
+000005AB  FA                cli
+000005AC  CE                into
+000005AD  FA                cli
+000005AE  CE                into
+000005AF  FA                cli
+000005B0  CE                into
+000005B1  FA                cli
+000005B2  CE                into
+000005B3  FA                cli
+000005B4  CE                into
+000005B5  FA                cli
+000005B6  CE                into
+000005B7  FA                cli
+000005B8  CE                into
+000005B9  FA                cli
+000005BA  CE                into
+000005BB  FA                cli
+000005BC  CE                into
+000005BD  FA                cli
+000005BE  CE                into
+000005BF  FA                cli
+000005C0  CE                into
+000005C1  FA                cli
+000005C2  CE                into
+000005C3  FA                cli
+000005C4  CE                into
+000005C5  FA                cli
+000005C6  CE                into
+000005C7  FA                cli
+000005C8  CE                into
+000005C9  FA                cli
+000005CA  CE                into
+000005CB  FA                cli
+000005CC  CE                into
+000005CD  FA                cli
+000005CE  CE                into
+000005CF  FA                cli
+000005D0  CE                into
+000005D1  FA                cli
+000005D2  CE                into
+000005D3  FA                cli
+000005D4  CE                into
+000005D5  FA                cli
+000005D6  CE                into
+000005D7  FA                cli
+000005D8  CE                into
+000005D9  FA                cli
+000005DA  CE                into
+000005DB  FA                cli
+000005DC  CE                into
+000005DD  FA                cli
+000005DE  CE                into
+000005DF  FA                cli
+000005E0  CE                into
+000005E1  FA                cli
+000005E2  CE                into
+000005E3  FA                cli
+000005E4  CE                into
+000005E5  FA                cli
+000005E6  CE                into
+000005E7  FA                cli
+000005E8  CE                into
+000005E9  FA                cli
+000005EA  CE                into
+000005EB  FA                cli
+000005EC  CE                into
+000005ED  FA                cli
+000005EE  CE                into
+000005EF  FA                cli
+000005F0  CE                into
+000005F1  FA                cli
+000005F2  CE                into
+000005F3  FA                cli
+000005F4  CE                into
+000005F5  FA                cli
+000005F6  CE                into
+000005F7  FA                cli
+000005F8  CE                into
+000005F9  FA                cli
+000005FA  CE                into
+000005FB  FA                cli
+000005FC  CE                into
+000005FD  FA                cli
+000005FE  CE                into
+000005FF  FA                cli

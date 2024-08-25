@@ -1,0 +1,5 @@
+#repo donde está el manual explicado
+https://github.com/cfenollosa/os-tutorial
+
+#link del manual
+http://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf
